@@ -16,24 +16,35 @@ Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} ");
 
 if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
 {
-    Console.WriteLine("You rolled doubles! +2 bonus to total!");
-    total += 2;
+    if ((roll1 == roll2) && (roll2 == roll3))
+    {
+        Console.WriteLine("You rolled Tripples! +6 bonus to total!");
+        total += 6;
+    }
+    else
+    {
+        Console.WriteLine("You rolled doubles! +2 bonus to total!");
+        total += 2;
+    }
 }
 
-if ((roll1 == roll2) && (roll2 == roll3))
-{
-    Console.WriteLine("You rolled Tripples! +6 bonus to total!");
-    total += 6;
-}
 
-if (total > 14)
-{
-    Console.WriteLine("You Win!!!");
-}
 
-if (total < 14)
+if (total >= 16)
 {
-    Console.WriteLine("Sorry, You Lose.");
+    Console.WriteLine("You won a new car!!!");
+}
+else if (total >= 10)
+{
+    Console.WriteLine("You won a new Laptop!!!");
+}
+else if (total == 7)
+{
+    Console.WriteLine("You won a trip");
+}
+else
+{
+    Console.WriteLine("You won a kitten");
 }
 
 Console.WriteLine(total);
